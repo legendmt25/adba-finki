@@ -1,13 +1,14 @@
 services:
-  adba-oracle:
+  dba-oracle:
     image: container-registry.oracle.com/database/enterprise:21.3.0.0
-    container_name: adba-oracle
+    container_name: dba-oracle
     ports:
       - 1521:1521
     environment:
-      - ORACLE_PWD=password
+      - ORACLE_PWD=dba_oracle
+      - ORACLE_PDB=dba_oracle
     volumes:
-      - adba-oracle-data:/opt/oracle/oradata
+      - dba-oracle-data:/opt/oracle/oradata
 
 volumes:
-  adba-oracle-data:
+  dba-oracle-data:
